@@ -10,7 +10,6 @@
         "jsx": "react-jsx",
         "moduleResolution": "node",
         "rootDir": "src",
-        //
         "strict": false,
         "alwaysStrict": false,
         "strictNullChecks": true,

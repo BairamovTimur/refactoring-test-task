@@ -1,29 +1,29 @@
-import { StrictMode, Profiler, ProfilerOnRenderCallback } from "react";
-import { createRoot } from "react-dom/client";
+import { StrictMode, Profiler, ProfilerOnRenderCallback } from 'react';
+import { createRoot } from 'react-dom/client';
 
-import App from "./components/App";
+import App from './components/App';
 
-const rootElement = document.getElementById("root") as HTMLElement ;
-const root  = createRoot(rootElement);
+const rootElement = document.getElementById('root') as HTMLElement;
+const root = createRoot(rootElement);
 
 const onRenderCallback: ProfilerOnRenderCallback = (
-  _id,
-  phase,
-  actualDuration,
-  _baseDuration,
-  _startTime,
-  _commitTime
+    _id,
+    phase,
+    actualDuration,
+    _baseDuration,
+    _startTime,
+    _commitTime
 ) => {
-  console.log(
-    `phase: ${phase}
+    console.log(
+        `phase: ${phase}
 actualDuration: ${actualDuration}`
-  );
+    );
 };
 
 root.render(
-  <StrictMode>
-    <Profiler id="Profiler" onRender={onRenderCallback}>
-      <App />
-    </Profiler>
-  </StrictMode>
+    <StrictMode>
+        <Profiler id="Profiler" onRender={onRenderCallback}>
+            <App />
+        </Profiler>
+    </StrictMode>
 );
