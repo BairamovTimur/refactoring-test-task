@@ -8,7 +8,7 @@ const USER_COUNT = 1000;
 export interface IUserData {
   id: number;
   name: string;
-  enabled: boolean;
+  selected: boolean;
 }
 
 //сложный алгоритм который нельзя менять
@@ -22,7 +22,7 @@ export const getData = () => {
         data.push({
           id: Math.round(i / 1),
           name: `${getRandomName()} ${getRandomName()}`,
-          enabled: false,
+          selected: false,
         });
       }
     }
@@ -34,13 +34,13 @@ export const getData = () => {
 //предполагается что она принимает измененного пользователя
 //в сам алгоритм лезть не нужно он бессмысленен, нужен только
 //для создания нагрузки
-export const saveUserInStorage = ({ id, name, enabled }: IUserData) => {
+export const saveUserInStorage = ({ id, name, selected }: IUserData) => {
   const data: IUserData[] = [];
   for (let i = 1; i <= 10000; i++) {
     data.push({
       id,
       name,
-      enabled,
+      selected,
     });
   }
 };

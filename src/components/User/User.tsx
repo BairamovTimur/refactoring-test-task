@@ -1,6 +1,14 @@
 import { memo } from "react";
 import "./styles.css";
 
+interface IProps {
+  id: number;
+  enabled: boolean;
+  name: string;
+  onChange: (id: number) => void;
+  index: number;
+}
+
 export const User = memo(
   ({
     id,
@@ -8,13 +16,7 @@ export const User = memo(
     name,
     onChange,
     index,
-  }: {
-    id: number;
-    enabled: boolean;
-    name: string;
-    onChange: (id: number) => void;
-    index: number;
-  }) => {
+  }: IProps) => {
     return (
       <li>
         <label className="user" key={id}>

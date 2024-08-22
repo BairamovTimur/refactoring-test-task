@@ -10,7 +10,7 @@ export default function App() {
   const getTotalSelectedItems = useCallback(
     () =>
       list.filter((element) => {
-        return !!element.enabled;
+        return !!element.selected;
       }).length,
     [list]
   );
@@ -29,7 +29,7 @@ export default function App() {
     const newList = list.map((element) => {
       const newElement = { ...element };
       if (element.id === id) {
-        newElement.enabled = !newElement.enabled;
+        newElement.selected = !newElement.selected;
       }
       return newElement;
     });
@@ -59,10 +59,10 @@ export default function App() {
         Total unselected items: {totalUnselectedItems}
       </div>
       <ol className="user-list">
-        {list.map(({ id, enabled, name }, index) => (
+        {list.map(({ id, selected, name }, index) => (
           <User
             id={id}
-            enabled={enabled}
+            enabled={selected}
             name={name}
             onChange={onChange}
             index={index}
