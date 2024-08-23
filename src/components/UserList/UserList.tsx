@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import {
     getUserList,
     ClickProfiler,
-    updateUserInStorage,
+    updateUser,
     IUserResponse,
 } from '../../helpers/helpers';
 import { User } from '../User/User';
@@ -54,7 +54,7 @@ export const UserList = ({ data }: IProps) => {
     }, [totalSelectedItems, totalItem]);
 
     const saveAllUsers = useCallback(async () => {
-        await Promise.all(userList.map(updateUserInStorage));
+        await Promise.all(userList.map(updateUser));
         clickProfiler?.endProfile();
     }, [userList]);
 

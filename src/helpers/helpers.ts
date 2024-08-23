@@ -84,9 +84,7 @@ let countRunningUpdateRequests = 0;
 //Функция эмулятор отправки запроса на бекенд, предполагается что она принимает
 //пользователя и отправляет его на бек для сохранения. Если одновременно запускается несколько
 //подобных функций то время ответа увеличивается пропорционально количеству запущенных функций
-export const updateUserInStorage = async (
-    user: IUserList
-): Promise<IUserList> => {
+export const updateUser = async (user: IUserList): Promise<IUserList> => {
     return new Promise(resolve => {
         countRunningUpdateRequests += 1;
         setTimeout(() => {
