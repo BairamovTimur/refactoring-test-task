@@ -64,7 +64,6 @@ export const getUserList = (data: IUserResponse[]) => {
         ];
         return newAcc;
     }, []);
-    console.log(list.length);
     const ids = list.map(({ id }) => id);
     const uniqueIds = ids.reduce<number[]>((acc, id) => {
         if (acc.includes(id)) {
