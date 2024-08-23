@@ -1,4 +1,4 @@
-import { StrictMode, Profiler, ProfilerOnRenderCallback } from 'react';
+import { Profiler, ProfilerOnRenderCallback } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './components/App';
@@ -21,9 +21,7 @@ actualDuration: ${actualDuration}`
 };
 
 root.render(
-    <StrictMode>
-        <Profiler id="Profiler" onRender={onRenderCallback}>
-            <App />
-        </Profiler>
-    </StrictMode>
+    <Profiler id="Profiler" onRender={onRenderCallback}>
+        <App />
+    </Profiler>
 );
